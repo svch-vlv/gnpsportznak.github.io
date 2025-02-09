@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="gnp sporznak, снт спортзнак, спортзнак">
+    <title>Спортзнак: The Site</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: lime;
+        }
+        .date {
+            position: absolute;
+            top: 20px; /* Положение даты */
+            right: 10px;
+            font-size: 14px;
+            color: lime;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            text-shadow: 1px 1px 0px #003300;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            display: block;
+            margin: 20px auto;
+            width: 150px; /* Уменьшенная ширина картинки */
+            height: auto; /* Автоматическая высота */
+        }
+        .info {
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid lime; /* Разделитель */
+            margin-top: 20px; /* Отступ сверху */
+        }
+        .map {
+            width: 100%;
+            height: 400px; /* Высота карты */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="date" id="currentDateTime"></div>
+    
+    <h1>Спортзнак: The Site</h1>
+    
+    <img src="https://i.pinimg.com/736x/f8/6d/f6/f86df621b3ac89e8488275674e05b95e.jpg" alt="Логотип Спортзнак" class="logo">
+
+    <div class="content">
+        <p>Добро пожаловать! Вы находитесь на нашем сайте!</p>
+    </div>
+
+    <div class="info">
+        <h2>Информация</h2>
+        <p>СНТ Спортзнак - деревня, расположенная в Наро-Фоминском районе Московской области.</p>
+       
+            </div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const year = 1990; // Измененный год
+            const options = { 
+                day: 'numeric', 
+                month: 'long', 
+                year: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                hour12: false 
+            };
+            const dateTimeString = now.toLocaleString('ru-RU', options).replace(/,\s\d{4}/, `, ${year}`);
+            document.getElementById('currentDateTime').innerText = `Дата: ${dateTimeString}`;
+        }
+
+        // Обновляем дату и время при загрузке страницы
+        updateDateTime();
+        // Обновляем каждую секунду
+        setInterval(updateDateTime, 1000);
+    </script>
+
+</body>
+</html>
