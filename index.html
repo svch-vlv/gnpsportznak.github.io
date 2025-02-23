@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="gnp sporznak, снт спортзнак, спортзнак">
+    <title>Спортзнак: Официальный сайт</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #181818;
+            color: #f0f0f0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.2);
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .date {
+            font-size: 1rem;
+            color: #bbb;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .block {
+            background: linear-gradient(135deg, #292929, #3a3a3a);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.8s ease-in-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 18px rgba(255, 255, 255, 0.2);
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>СНТ Спортзнак: Официальный сайт</h1>
+        <div class="date" id="currentDateTime"></div>
+
+        <div class="block">
+            <h2>О СНТ Спортзнак</h2>
+            <p>СНТ Спортзнак — это уютный поселок в Наро-Фоминском районе Московской области.</p>
+        </div>
+
+        <div class="block">
+            <h2>Расположение</h2>
+            <p>Находится в 14 км от Верея, в 2,5 км от деревни Тишинка. Координаты: 55.3421° с.ш., 36.2448° в.д.</p>
+        </div>
+
+        <div class="block">
+            <h2>Почтовый индекс</h2>
+            <p>143323</p>
+        </div>
+
+        <div class="block">
+            <h2>Недвижимость</h2>
+            <p>В СНТ Спортзнак доступны участки и дома. Например, 2-этажный дом (98 м²) на участке 12 соток.</p>
+        </div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                day: 'numeric', 
+                month: 'long', 
+                year: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                hour12: false 
+            };
+            document.getElementById('currentDateTime').innerText = `Дата: ${now.toLocaleString('ru-RU', options)}`;
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+
+</body>
+</html>
